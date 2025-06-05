@@ -100,6 +100,8 @@ router.post("/login", async (req, res) => {
         res.cookie("jwt", _token, {
           expires: new Date(Date.now() + 2592000000), //30 days
           httpOnly: true,
+          secure: true, // ✅ true for HTTPS (Netlify + Vercel are HTTPS)
+          sameSite: "None", // ✅ required when cross-origin
         });
 
         console.log("login successfully");
