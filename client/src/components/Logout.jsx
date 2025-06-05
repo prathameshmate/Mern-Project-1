@@ -13,6 +13,7 @@ const Logout = () => {
         headers: {
           "Content-Type": "appplication/json",
         },
+        credentials: "include", //Important for cookies
       });
 
       console.log(res);

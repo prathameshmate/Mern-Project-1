@@ -24,7 +24,7 @@ const corsOptions = {
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
+  credentials: true, // importent for cookies
 };
 
 app.use(cors(corsOptions));
