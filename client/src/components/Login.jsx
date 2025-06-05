@@ -29,7 +29,7 @@ const Login = () => {
       event.preventDefault(); //prevent default behaviour of form
 
       // it call the  post method having /login in back-end
-      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/login`, {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v1/login`, {
         //fetch used to called the function of backend from frontend
         method: "POST",
         headers: {
