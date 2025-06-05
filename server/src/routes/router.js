@@ -120,7 +120,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/logout", async (req, res) => {
+router.get("/logout", auth, async (req, res) => {
   try {
     res.clearCookie("jwt");
 
