@@ -122,7 +122,12 @@ router.post("/login", async (req, res) => {
 
 router.get("/logout", auth, async (req, res) => {
   try {
-    res.clearCookie("jwt");
+    res.clearCookie("jwt", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      path: "/",
+    });
 
     //logout from perticular device
     req.result.tokens = req.result.tokens.filter((currElement) => {
